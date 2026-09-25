@@ -64,3 +64,5 @@ If a strict Content Security Policy is used, allow the generated `data:` displac
 ## Rebuilding
 
 The source package includes its runtime and frozen preset. Run `npm install`, then `npm run build` in this folder to regenerate `dist`. At the website root, `npm run package:glass` first synchronizes source and the latest saved preset, then produces `artifacts/speedrun-glass-effects.zip`. The included checksum makes it easy to verify which art direction the developer has received.
+
+The same build also generates a self-contained `demo/index.html` from `demo/index.template.html`, the classic-script distribution and the demo's styles/media. This example supports direct opening from Finder; it has no module imports or external visual dependencies. Edit the template, `demo.js` and `demo.css`, then rebuild instead of editing generated HTML. The hosted example optionally adds the mockup's video; the downloadable example uses its embedded poster until a local video is selected. The reusable production JS/CSS remain separate and unchanged by this demo-only embedding.

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>speedrun · Glass Effects</title>
+  <link rel="stylesheet" href="../dist/glass-effects.css">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <header><a href="#top" class="wordmark">speedrun</a><a data-glass-button data-glass-lift="off" class="nav-apply" href="#quote">Apply now</a></header>
+  <main id="top">
+    <section class="intro"><p class="eyebrow">Developer Example</p><h1>Glass Effects</h1><p>The final button and quote interactions, on a standalone page. Hover a button, click its surface, then scroll into the quote.</p></section>
+    <section class="video-stage" aria-label="Glass over video">
+      <video id="film" muted loop playsinline preload="metadata" poster="assets/poster.png"></video>
+      <div class="video-copy"><h2>Your First Believers</h2><button data-glass-button data-glass-video="#film" class="video-apply" type="button"><span>Apply now</span></button></div>
+    </section>
+    <div class="examples"><button data-glass-button type="button"><span>Explore Capital</span></button><label class="video-picker">Try your own video <input type="file" accept="video/*" id="video-file"></label><button id="video-toggle" class="plain-control" type="button" disabled>Play video</button></div>
+    <section class="prelude"><h2>Scroll to Collect and Release</h2><p>The quote gathers from 13% visibility and releases at 54%. Clicks create a fresh outward ripple.</p></section>
+    <section id="quote" data-glass-quote aria-label="Our belief in founders"><blockquote>“We invest in the magnitude of a strength, not in a lack of weaknesses. At the start, the strength is the founders and whatever they know that nobody else does.”</blockquote><p class="attribution"><strong>Marc Andreessen and Ben Horowitz</strong><br>Cofounders, a16z</p></section>
+    <footer><p>Use the same effect on your own content.</p><a href="../README.md">Quick start</a><a href="../INTEGRATION.md">Integration guide</a></footer>
+  </main>
+  <script src="../dist/glass-effects.global.js"></script>
+  <script src="demo.js"></script>
+</body>
+</html>

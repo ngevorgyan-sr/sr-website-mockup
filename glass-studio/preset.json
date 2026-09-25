@@ -1,0 +1,712 @@
+{
+  "button": {
+    "duration": 1000,
+    "strength": 2,
+    "width": 0.8,
+    "dispersion": 3.95,
+    "glow": 0.16,
+    "sheen": 0.03,
+    "stretch": 0.03,
+    "lift": 3,
+    "hoverScale": 1.027,
+    "travel": [
+      0.25,
+      0.1,
+      0.35,
+      1
+    ],
+    "envelope": [
+      {
+        "t": 0,
+        "value": 0,
+        "ease": [
+          0.32655218544944264,
+          0.3229977762708367,
+          0.6666666666666666,
+          1
+        ]
+      },
+      {
+        "t": 0.15168551336815161,
+        "value": 0.16560486821207446,
+        "ease": [
+          0.6722058096816348,
+          0.47763245741762356,
+          0.6666666666666666,
+          1
+        ]
+      },
+      {
+        "t": 0.4671078257586241,
+        "value": 0.6027262121455464,
+        "ease": [
+          0.3333333333333333,
+          0,
+          0.7080219660030812,
+          0.5933809039435681
+        ]
+      },
+      {
+        "t": 0.65,
+        "value": 0.65,
+        "ease": [
+          0.3143461192584396,
+          0.37022242172410774,
+          0.6666666666666666,
+          1
+        ]
+      },
+      {
+        "t": 1,
+        "value": 0
+      }
+    ],
+    "radius": 0.9,
+    "highlightSize": 1,
+    "coreGlow": 0,
+    "coreDuration": 1120,
+    "ringSoftness": 1,
+    "stretchDuration": 1310,
+    "stretchDelay": 0,
+    "origin": {
+      "x": 0,
+      "y": 0.5
+    },
+    "hoverOrigin": "entry",
+    "clickOrigin": "pointer",
+    "spectrum": [
+      {
+        "position": 0,
+        "color": "#ff1e00"
+      },
+      {
+        "position": 0.2329296875,
+        "color": "#ffd26e"
+      },
+      {
+        "position": 0.495,
+        "color": "#70e7e3"
+      },
+      {
+        "position": 0.7195052083333333,
+        "color": "#824dff"
+      },
+      {
+        "position": 1,
+        "color": "#e8c2ff"
+      }
+    ],
+    "spectrumShift": [
+      {
+        "t": 0,
+        "value": -92.9844709325688,
+        "ease": [
+          0.36634580377978937,
+          1,
+          0.6627300631314912,
+          0.7231238447929026
+        ]
+      },
+      {
+        "t": 0.483781965578251,
+        "value": 8.433347588082881,
+        "ease": [
+          0.2931044319278276,
+          0,
+          0.42620556798208975,
+          0.42442775053487414
+        ]
+      },
+      {
+        "t": 1,
+        "value": 177.71173510359222
+      }
+    ],
+    "coreEnvelope": [
+      {
+        "t": 0,
+        "value": 0
+      },
+      {
+        "t": 0.14,
+        "value": 0.72
+      },
+      {
+        "t": 0.28,
+        "value": 1
+      },
+      {
+        "t": 0.65,
+        "value": 0.65
+      },
+      {
+        "t": 1,
+        "value": 0
+      }
+    ],
+    "coreMotion": {
+      "startScale": 1,
+      "releaseScale": 1,
+      "endScale": 1,
+      "contractStart": 0,
+      "contractCurve": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "expandCurve": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    "stretchTravel": [
+      0.25,
+      0.1,
+      0.35,
+      1
+    ],
+    "stretchEnvelope": [
+      {
+        "t": 0,
+        "value": 0
+      },
+      {
+        "t": 0.14,
+        "value": 0.72
+      },
+      {
+        "t": 0.28,
+        "value": 1
+      },
+      {
+        "t": 0.65,
+        "value": 0.65
+      },
+      {
+        "t": 1,
+        "value": 0
+      }
+    ],
+    "liftMotion": {
+      "duration": 540,
+      "delay": 0,
+      "curve": [
+        0.25,
+        0.1,
+        0.14,
+        1
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "value": 0
+        },
+        {
+          "t": 0.25,
+          "value": 0.25
+        },
+        {
+          "t": 0.5,
+          "value": 0.5
+        },
+        {
+          "t": 0.75,
+          "value": 0.75
+        },
+        {
+          "t": 1,
+          "value": 1
+        }
+      ],
+      "returnDuration": 240,
+      "returnCurve": [
+        0.22,
+        0.61,
+        0.36,
+        1
+      ],
+      "returnKeyframes": [
+        {
+          "t": 0,
+          "value": 0
+        },
+        {
+          "t": 0.25,
+          "value": 0.25
+        },
+        {
+          "t": 0.5,
+          "value": 0.5
+        },
+        {
+          "t": 0.75,
+          "value": 0.75
+        },
+        {
+          "t": 1,
+          "value": 1
+        }
+      ]
+    },
+    "scaleMotion": {
+      "duration": 530,
+      "delay": 0,
+      "curve": [
+        0.25,
+        0.1,
+        0.25,
+        1
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "value": 0
+        },
+        {
+          "t": 0.25,
+          "value": 0.25
+        },
+        {
+          "t": 0.5,
+          "value": 0.5
+        },
+        {
+          "t": 0.75,
+          "value": 0.75
+        },
+        {
+          "t": 1,
+          "value": 1
+        }
+      ],
+      "returnDuration": 280,
+      "returnCurve": [
+        0.22,
+        0.61,
+        0.36,
+        1
+      ],
+      "returnKeyframes": [
+        {
+          "t": 0,
+          "value": 0
+        },
+        {
+          "t": 0.25,
+          "value": 0.25
+        },
+        {
+          "t": 0.5,
+          "value": 0.5
+        },
+        {
+          "t": 0.75,
+          "value": 0.75
+        },
+        {
+          "t": 1,
+          "value": 1
+        }
+      ]
+    },
+    "warmup": {
+      "enabled": false,
+      "start": 0.08,
+      "release": 0.78,
+      "previewDuration": 1000,
+      "releaseFade": 336,
+      "strength": 3.5,
+      "width": 0.45,
+      "glow": 0.075,
+      "sheen": 0.2,
+      "coreGlow": 0.28,
+      "stretch": 0.003,
+      "stretchY": 0,
+      "curve": [
+        0.42,
+        0,
+        0.58,
+        1
+      ],
+      "coreEnvelope": [
+        {
+          "t": 0,
+          "value": 1
+        },
+        {
+          "t": 0.25,
+          "value": 1
+        },
+        {
+          "t": 0.5,
+          "value": 1
+        },
+        {
+          "t": 0.75,
+          "value": 1
+        },
+        {
+          "t": 1,
+          "value": 1
+        }
+      ]
+    },
+    "surface": {
+      "tintColor": "#EBE9E6",
+      "cornerRadius": null,
+      "refraction": 2,
+      "chromAberration": 0.645,
+      "edgeHighlight": 0.34,
+      "specular": 0.41,
+      "specularSharpness": 0.2,
+      "fresnel": 0.85,
+      "distortion": 1,
+      "zRadius": 17,
+      "opacity": 1,
+      "brightness": 1,
+      "shadowOpacity": 0.11,
+      "shadowSpread": 0,
+      "shadowCenterOpacity": 0.606,
+      "shadowCenterSpread": 2,
+      "videoShadowOpacity": 0.16,
+      "videoShadowSpread": 8,
+      "bevelMode": "pill",
+      "tintOpacity": 2,
+      "videoTintOpacity": 0.28,
+      "blur": 1.7,
+      "saturation": 1,
+      "shine": 1,
+      "edge": 1
+    }
+  },
+  "quote": {
+    "duration": 2500,
+    "strength": 12,
+    "width": 0.61,
+    "dispersion": 3.9,
+    "glow": 0.09,
+    "sheen": 0.72,
+    "stretch": 0.02,
+    "lift": 0,
+    "hoverScale": 1,
+    "travel": [
+      0.51,
+      0,
+      0.32,
+      1
+    ],
+    "envelope": [
+      {
+        "t": 0,
+        "value": 0
+      },
+      {
+        "t": 0.14,
+        "value": 0.72
+      },
+      {
+        "t": 0.28,
+        "value": 1
+      },
+      {
+        "t": 0.65,
+        "value": 0.65
+      },
+      {
+        "t": 1,
+        "value": 0
+      }
+    ],
+    "radius": 1.17,
+    "highlightSize": 0.81,
+    "coreGlow": 0.5,
+    "coreDuration": 770,
+    "ringSoftness": 1,
+    "stretchDuration": 1680,
+    "stretchDelay": 0,
+    "clickHighlightSize": 0.12,
+    "origin": {
+      "x": 0.5,
+      "y": 0
+    },
+    "hoverOrigin": "fixed",
+    "clickOrigin": "pointer",
+    "spectrum": [
+      {
+        "position": 0,
+        "color": "#ff7664"
+      },
+      {
+        "position": 0.16904947916666666,
+        "color": "#fff370"
+      },
+      {
+        "position": 0.48973958333333334,
+        "color": "#70e7e3"
+      },
+      {
+        "position": 0.8168359375,
+        "color": "#7495ff"
+      },
+      {
+        "position": 1,
+        "color": "#d38aff"
+      }
+    ],
+    "spectrumShift": [
+      {
+        "t": 0,
+        "value": -5.356282456234226
+      },
+      {
+        "t": 0.5009493607037449,
+        "value": 2.013691846458755
+      },
+      {
+        "t": 1,
+        "value": 4.172934846619057
+      }
+    ],
+    "coreEnvelope": [
+      {
+        "t": 0,
+        "value": 0,
+        "ease": [
+          0.6743026044952511,
+          0.005498599139854103,
+          0.6666666666666666,
+          1
+        ]
+      },
+      {
+        "t": 0.145345934790629,
+        "value": 0
+      },
+      {
+        "t": 0.28748319613539935,
+        "value": 0
+      },
+      {
+        "t": 0.5896128770060874,
+        "value": 0.40212665292574545
+      },
+      {
+        "t": 1,
+        "value": 0
+      }
+    ],
+    "coreMotion": {
+      "startScale": 1.71,
+      "releaseScale": 0.27,
+      "endScale": 1.6,
+      "contractStart": 0.22,
+      "contractCurve": [
+        0.46,
+        0,
+        0.76,
+        1
+      ],
+      "expandCurve": [
+        0.26,
+        0,
+        0.19,
+        1
+      ]
+    },
+    "stretchTravel": [
+      0.51,
+      0,
+      0.32,
+      1
+    ],
+    "stretchEnvelope": [
+      {
+        "t": 0,
+        "value": 0
+      },
+      {
+        "t": 0.14,
+        "value": 0.72
+      },
+      {
+        "t": 0.28,
+        "value": 1
+      },
+      {
+        "t": 0.65,
+        "value": 0.65
+      },
+      {
+        "t": 1,
+        "value": 0
+      }
+    ],
+    "liftMotion": {
+      "duration": 360,
+      "delay": 0,
+      "curve": [
+        0.22,
+        0.61,
+        0.36,
+        1
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "value": 0
+        },
+        {
+          "t": 0.25,
+          "value": 0.25
+        },
+        {
+          "t": 0.5,
+          "value": 0.5
+        },
+        {
+          "t": 0.75,
+          "value": 0.75
+        },
+        {
+          "t": 1,
+          "value": 1
+        }
+      ],
+      "returnDuration": 240,
+      "returnCurve": [
+        0.22,
+        0.61,
+        0.36,
+        1
+      ],
+      "returnKeyframes": [
+        {
+          "t": 0,
+          "value": 0
+        },
+        {
+          "t": 0.25,
+          "value": 0.25
+        },
+        {
+          "t": 0.5,
+          "value": 0.5
+        },
+        {
+          "t": 0.75,
+          "value": 0.75
+        },
+        {
+          "t": 1,
+          "value": 1
+        }
+      ]
+    },
+    "scaleMotion": {
+      "duration": 420,
+      "delay": 0,
+      "curve": [
+        0.22,
+        0.61,
+        0.36,
+        1
+      ],
+      "keyframes": [
+        {
+          "t": 0,
+          "value": 0
+        },
+        {
+          "t": 0.25,
+          "value": 0.25
+        },
+        {
+          "t": 0.5,
+          "value": 0.5
+        },
+        {
+          "t": 0.75,
+          "value": 0.75
+        },
+        {
+          "t": 1,
+          "value": 1
+        }
+      ],
+      "returnDuration": 280,
+      "returnCurve": [
+        0.22,
+        0.61,
+        0.36,
+        1
+      ],
+      "returnKeyframes": [
+        {
+          "t": 0,
+          "value": 0
+        },
+        {
+          "t": 0.25,
+          "value": 0.25
+        },
+        {
+          "t": 0.5,
+          "value": 0.5
+        },
+        {
+          "t": 0.75,
+          "value": 0.75
+        },
+        {
+          "t": 1,
+          "value": 1
+        }
+      ]
+    },
+    "warmup": {
+      "enabled": true,
+      "start": 0.13,
+      "release": 0.54,
+      "previewDuration": 650,
+      "releaseFade": 140,
+      "strength": 3.5,
+      "width": 0.45,
+      "glow": 0.075,
+      "sheen": 0.2,
+      "coreGlow": 0.28,
+      "stretch": 0.003,
+      "stretchY": 0.02,
+      "curve": [
+        0.42,
+        0,
+        0.58,
+        1
+      ],
+      "coreEnvelope": [
+        {
+          "t": 0,
+          "value": 1
+        },
+        {
+          "t": 0.25,
+          "value": 1
+        },
+        {
+          "t": 0.5,
+          "value": 1
+        },
+        {
+          "t": 0.75,
+          "value": 0.65
+        },
+        {
+          "t": 1,
+          "value": 0.25
+        }
+      ]
+    }
+  }
+}

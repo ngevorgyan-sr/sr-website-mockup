@@ -55,7 +55,9 @@ For a bundler project, install the downloaded folder locally with `npm install .
 
 ## Run the Included Example
 
-Serve this folder over HTTP (for example `python3 -m http.server 8090`) and open `http://localhost:8090/demo/`. The browser's `file://` mode cannot import JavaScript modules reliably. See [INTEGRATION.md](INTEGRATION.md) for the API, styling, behavior, and production notes.
+Unzip the complete download, then double-click **demo/index.html**. Version1.0.1 embeds the classic-script runtime, styles, font and poster directly in that file, so no server or installation is needed. Hover/click either button and scroll down to the quote. Choose **Try your own video** to test moving footage; the download starts with a still poster.
+
+You can also serve the folder over HTTP (for example `python3 -m http.server 8090`) and open `http://localhost:8090/demo/`. The production ES-module files in `dist/` are still intended for a website or bundler. See [INTEGRATION.md](INTEGRATION.md) for the API, styling, behavior, and production notes.
 
 ## What to Hand to the Developer
 

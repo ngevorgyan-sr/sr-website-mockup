@@ -1,4 +1,5 @@
-import {mountGlass} from '../dist/glass-effects.js';
+(() => {
+const {mountGlass}=window.SpeedrunGlass;
 const effects=mountGlass();
 const video=document.querySelector('#film'),input=document.querySelector('#video-file'),toggle=document.querySelector('#video-toggle');
 let localURL;
@@ -17,3 +18,4 @@ let resume=false;
 const visibility=new IntersectionObserver(entries=>{if(!entries[0].isIntersecting){resume=!video.paused;video.pause();}else if(resume&&!document.hidden){resume=false;video.play().catch(()=>{});}});visibility.observe(video);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();});
 window.addEventListener('pagehide',()=>{effects.destroy();visibility.disconnect();video.pause();if(localURL)URL.revokeObjectURL(localURL);},{once:true});
+})();
