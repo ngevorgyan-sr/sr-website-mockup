@@ -26,9 +26,14 @@
   }
   for(const element of buttons){
     const variant=element.dataset.buttonDesign;
-    // Only the base finish changes. Ripple, color, stretch and hover retain the
-    // locked preset. Custom CSS finishes skip the unused static material shader.
-    effects.push(mountGlassButton(element,{settings:variant==='01'?{}:{surface:{opacity:0}}}));
+    // Custom CSS finishes skip the unused static material shader. The black
+    // surface gets slightly brighter ripple light; motion keeps the locked preset.
+    const settings=variant==='01'?{}:{surface:{opacity:0}};
+    if(variant==='03')Object.assign(settings,{
+      glow:preset.button.glow*1.25,
+      sheen:preset.button.sheen*(4/3),
+    });
+    effects.push(mountGlassButton(element,{settings}));
     const clip=element.querySelector('.sr-button-clip');
     if(variant==='03')clip.prepend(finish('comparison-flat-body'));
     if(variant==='02'){

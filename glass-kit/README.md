@@ -63,7 +63,7 @@ You can also serve the folder over HTTP (for example `python3 -m http.server 809
 
 Open **[demo/buttons/index.html](demo/buttons/index.html)**, also self-contained, to compare the `BUTTON_Demo` Figma designs. The same “What you get” section is repeated with **01 Current Glass**, **02 Grey Gloss**, and **03 Flat Black**. Hover, click or use keyboard focus to try the same saved ripple, stretch, lift and scale on each. These are demonstration buttons and do not navigate away.
 
-The grey design adds an animated edge reflection and surface gloss during interaction. Its finish and the black fill are CSS layers inside the existing deforming shell. Their static glass material is disabled, so the new bases do not run an unused material shader. All ripple and hover settings remain the locked preset. The black base is flat at rest; the shared ripple and hover still add their authored light and shadow during interaction.
+The grey design adds an animated edge reflection and surface gloss during interaction. Its finish and the black fill are CSS layers inside the existing deforming shell. Their static glass material is disabled, so the new bases do not run an unused material shader. Motion and timing retain the locked preset. The black design boosts only ripple iridescence by 25% and the moving ring highlight by one third for visibility on its dark fill; it stays flat at rest.
 
 Readable finish styles and interaction code are in `demo/buttons/buttons.css` and `buttons.js`. See **Custom button finishes** in the integration guide when adapting them to your own site.
 
