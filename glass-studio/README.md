@@ -4,6 +4,8 @@ Unzip this folder and double-click **index.html**. No installation or local serv
 
 The online version is at [Glass Studio](https://ngevorgyan-sr.github.io/sr-website-mockup/glass-studio/).
 
+The separate [three-button comparison](https://ngevorgyan-sr.github.io/sr-website-mockup/glass-kit/demo/buttons/) previews the saved effect on the current glass, grey gloss and flat black designs. Its self-contained HTML and readable variant code are included in the developer effects kit.
+
 ## Play and tune
 
 - Hover or click a button. Scroll into the quote for collection and release; click it for a fresh ripple.

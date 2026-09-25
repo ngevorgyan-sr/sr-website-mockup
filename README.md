@@ -4,6 +4,7 @@ Shareable production mockup with a separate glass playground and developer hando
 
 - [View the mockup](https://ngevorgyan-sr.github.io/sr-website-mockup/)
 - [Developer effect demo](https://ngevorgyan-sr.github.io/sr-website-mockup/glass-kit/demo/)
+- [Compare three button designs](https://ngevorgyan-sr.github.io/sr-website-mockup/glass-kit/demo/buttons/)
 - [Download the developer kit](https://ngevorgyan-sr.github.io/sr-website-mockup/downloads/speedrun-glass-effects.zip)
 - [Open Glass Studio](https://ngevorgyan-sr.github.io/sr-website-mockup/glass-studio/)
 - [Download Glass Studio](https://ngevorgyan-sr.github.io/sr-website-mockup/downloads/speedrun-glass-studio.zip)

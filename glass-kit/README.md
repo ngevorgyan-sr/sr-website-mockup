@@ -55,9 +55,17 @@ For a bundler project, install the downloaded folder locally with `npm install .
 
 ## Run the Included Example
 
-Unzip the complete download, then double-click **demo/index.html**. Version1.0.1 embeds the classic-script runtime, styles, font and poster directly in that file, so no server or installation is needed. Hover/click either button and scroll down to the quote. Choose **Try your own video** to test moving footage; the download starts with a still poster.
+Unzip the complete download, then double-click **demo/index.html**. It embeds the classic-script runtime, styles, font and poster directly in that file, so no server or installation is needed. Hover/click either button and scroll down to the quote. Choose **Try your own video** to test moving footage; the download starts with a still poster.
 
 You can also serve the folder over HTTP (for example `python3 -m http.server 8090`) and open `http://localhost:8090/demo/`. The production ES-module files in `dist/` are still intended for a website or bundler. See [INTEGRATION.md](INTEGRATION.md) for the API, styling, behavior, and production notes.
+
+## Compare Three Button Designs
+
+Open **[demo/buttons/index.html](demo/buttons/index.html)**, also self-contained, to compare the `BUTTON_Demo` Figma designs. The same “What you get” section is repeated with **01 Current Glass**, **02 Grey Gloss**, and **03 Flat Black**. Hover, click or use keyboard focus to try the same saved ripple, stretch, lift and scale on each. These are demonstration buttons and do not navigate away.
+
+The grey design adds an animated edge reflection and surface gloss during interaction. Its finish and the black fill are CSS layers inside the existing deforming shell. Their static glass material is disabled, so the new bases do not run an unused material shader. All ripple and hover settings remain the locked preset. The black base is flat at rest; the shared ripple and hover still add their authored light and shadow during interaction.
+
+Readable finish styles and interaction code are in `demo/buttons/buttons.css` and `buttons.js`. See **Custom button finishes** in the integration guide when adapting them to your own site.
 
 ## What to Hand to the Developer
 
@@ -65,7 +73,7 @@ You can also serve the folder over HTTP (for example `python3 -m http.server 809
 - `preset.json`: the exact locked values and keyframes.
 - `src/`: readable adapter, shader and animation source.
 - `examples/`: React button and quote components with cleanup.
-- `demo/`: working standalone HTML example.
+- `demo/`: standalone button/quote example and the three-design comparison in `demo/buttons/`.
 - `manifest.json`: version and preset checksum for comparison with the mockup.
 
 Changing the mockup's saved settings does not update an already downloaded kit. Re-export it with the website's `npm run package:glass` command after an approved tuning change.
