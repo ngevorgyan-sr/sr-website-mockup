@@ -42,7 +42,7 @@ For a custom CSS finish, call `mountGlassButton(element, {settings: {surface: {o
 
 `demo/buttons/buttons.css` and `buttons.js` provide the complete grey/black examples. The grey design uses its Figma gradient, 4px corners, inset highlights and contact shadow, plus a moving gloss and edge reflection. These accents run on entry, visible keyboard focus and click, stop when hidden/offscreen, and respect reduced motion. They use the locked ripple duration and introduce no continuous animation loop. Production code should attach these custom decorations through its own component lifecycle and remove them along with any custom listeners on unmount; `destroy()` cleans up library-owned elements only.
 
-The black variant also applies two local overrides: `glow = preset.button.glow * 1.25` for iridescence (currently 0.20) and `sheen = preset.button.sheen * (4/3)` for the moving ring highlight (currently 0.04). Spectrum, softness, timing, deformation and hover tracks stay as saved. These overrides are in the demo adapter, leaving `preset.json` and the other designs unchanged.
+The black variant also applies two local overrides: `glow = preset.button.glow * 1.6875` for iridescence (currently 0.27, a further 35% increase over the previous 0.20) and `sheen = preset.button.sheen * (4/3)` for the moving ring highlight (currently 0.04). Spectrum, softness, timing, deformation and hover tracks stay as saved. These overrides are in the demo adapter, leaving `preset.json` and the other designs unchanged.
 
 ## Framework Lifecycle
 

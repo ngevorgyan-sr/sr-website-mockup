@@ -30,7 +30,7 @@
     // surface gets slightly brighter ripple light; motion keeps the locked preset.
     const settings=variant==='01'?{}:{surface:{opacity:0}};
     if(variant==='03')Object.assign(settings,{
-      glow:preset.button.glow*1.25,
+      glow:preset.button.glow*1.6875,
       sheen:preset.button.sheen*(4/3),
     });
     effects.push(mountGlassButton(element,{settings}));
