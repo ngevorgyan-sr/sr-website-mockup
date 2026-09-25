@@ -5,11 +5,11 @@
 | Entry point | Options | Result |
 | --- | --- | --- |
 | `mountGlassButton(element, options)` | `video`: video element/selector; `lift`: boolean, default true; `settings`: partial button overrides | Component controller |
-| `mountGlassQuote(element, options)` | `content`: existing child wrapper; `headerOffset`: fixed-header height, default64; `scroll`: default true; `settings`: partial quote overrides | Component controller |
+| `mountGlassQuote(element, options)` | `content`: existing child wrapper; `headerOffset`: fixed-header height, default64; `scroll`: default true; `safariGPU`: default false, opt in to the supported quote layout below; `settings`: partial quote overrides | Component controller |
 | `mountGlass(root)` | Scan a document or container for the data attributes in the quick start | Group with `destroy()` |
 | `getGlassPreset()` | None | Fresh copy of the shipped button and quote configuration |
 
-Component controllers expose `play({x,y})`, `reset()`, `update(partialSettings)` and `destroy()`. Origin coordinates are normalized from0 to1. For example `{x:.5,y:0}` is top center. Calling a quote's `play()` always means a fresh click ripple; gathering occurs only from scroll. `reset()` stops the effect and rearms the quote for the next scroll update. Mounting the same element again returns its existing controller; destroy it first to change video/lift/header options.
+Component controllers expose `play({x,y})`, `reset()`, `update(partialSettings)` and `destroy()`. Origin coordinates are normalized from0 to1. For example `{x:.5,y:0}` is top center. Calling a quote's `play()` always means a fresh click ripple; gathering occurs only from scroll. `reset()` stops the effect and rearms the quote for the next scroll update. Mounting the same element again returns its existing controller; destroy it first to change video/lift/header/GPU options.
 
 `settings` uses the same nested properties as `preset.json`. Arrays replace entire keyframe tracks; nested objects merge. The supplied preset is authoritative. Strengths are mostly0–1, durations are milliseconds, stretch is a fractional scale delta, lift/blur/depth use CSS pixels. `specularSharpness:.2` corresponds to20% in the former editor. `bevelMode:'pill'` is the internal identifier for the polished **rounded bevel cross-section**; it does not make the button outline pill-shaped. `cornerRadius:null` respects the CSS outline. `getGlassPreset()` returns a copy so overrides cannot mutate the defaults for other components.
 
@@ -58,6 +58,22 @@ Video optics include refraction, chromatic aberration, Gaussian frosting, rounde
 
 The renderer shares one WebGL stage, caps tile density at1.5× and roughly380,000 pixels, clips final shading to the visible body, caches blur kernels and unchanged crops, and stops material updates when hidden/offscreen. Live video repaint is capped at about30fps; active hover/ripple animation uses the display clock. Ripple/hover have no idle animation loop. The package includes no sliders, timeline, tuning persistence, or development endpoint.
 
+## Safari Quote Acceleration
+
+`mountGlassQuote(element, {safariGPU: true})` enables the dedicated quote renderer **only in Safari**. With HTML auto-mounting, add the boolean attribute `data-glass-quote-gpu` alongside `data-glass-quote`. The default remains `false`: arbitrary quote content keeps native SVG. Chrome retains the existing SVG path even when opted in. The included demo opts in explicitly.
+
+The GPU source painter supports this layout contract:
+
+- Give `.sr-quote-content` a flat **opaque** color through `--glass-quote-background`. Put the fixed frame border on the outer section. Do not use transparent, photographic or decorative gradient backgrounds with this opt-in.
+- Put plain Latin quote text inside `blockquote`. Put attribution text in one or more `p` elements **inside** `.quote-attribution`; a `p` bearing that class by itself is not the same structure. Ordinary inline `strong`, `span` and `br` markup is supported through measured native text positions and computed font/color styles. Glyphs are painted individually: emoji, combining marks and scripts that depend on joined shaping should use SVG.
+- Optional portraits are images inside `.quote-avatars`, rendered as circular crops with `object-fit: cover` and top-centered positioning. Use same-origin/data-URL images or correctly configured CORS. The included demo omits portraits.
+- Keep other visible elements, icons, rich text decorations, `text-transform`, pseudo-element artwork, text shadows and independent descendant transforms out of the accelerated content. These are not reproduced by the source painter. Use the default SVG path for such content; structural checks are not a general validator of arbitrary markup or CSS.
+- Keep text/font/layout styles stable between relevant updates. The source refreshes for content text and avatar source changes, fonts finishing loading, content/viewport resizing and document-root `data-theme` changes. Other runtime class/style changes require destroying and remounting the effect so its cached source is rebuilt.
+
+The renderer caches a full-device-density source texture and applies the existing displacement map and RGB separation in one WebGL pass. It does not take DOM screenshots, repaint text each frame, lower resolution or add an idle drawing loop. The original HTML remains selectable and accessible underneath. During text selection, source rebuilding, unsupported/lost WebGL contexts, unavailable text metrics or oversize native-resolution surfaces, it falls back to the original SVG effect; context restoration resumes the accelerated renderer. Reduced motion and forced colors retain their existing accessible behavior. Cleanup releases the texture, canvas, observers and listeners.
+
+The approved main mockup measured about60fps on Mac Safari26.6.2, versus about13fps for the prior SVG quote, and118–120fps on Chrome153 using its unchanged native SVG path. These are foreground animation-frame measurements for that desktop and layout, not a universal frame-rate guarantee. This kit shares that renderer; measure the size, content and target devices of your own integration. Canvas text antialiasing can differ slightly from native SVG text while the effect is active.
+
 ## Interaction and Accessibility
 
 - Pointer entry chooses the nearest edge; click starts at the pointer; leaving returns lift/scale without another shimmer.
@@ -67,7 +83,7 @@ The renderer shares one WebGL stage, caps tile density at1.5× and roughly380,00
 - The decorative quote is not made a button. Text stays selectable and interactive descendants keep their own click behavior.
 - Reduced motion suppresses geometric deformation and shortens light feedback. Forced colors use a readable native-style fallback.
 
-Modern Chromium and Mac Safari 26.6.2 were checked in the accompanying handoff tests. The ripple uses independent channel transfers and screen compositing for its RGB separation, avoiding costly general matrix calculations while preserving the displaced colors and base alpha. The fractional map-centering matrix remains because equivalent-looking replacements round differently in Safari. The existing Safari filter invalidation remains for compatibility. Large Retina quote surfaces are still substantially more expensive than buttons; this optimization is not a 60fps guarantee. Test the actual integration on target Macs, physical iPhone/iPad and Firefox before launch; mobile Safari and Firefox have not been verified. Unsupported or unavailable WebGL falls back to native glass while labels and links remain functional.
+Modern Chromium and Mac Safari26.6.2 were checked in the accompanying handoff tests. The SVG path uses independent channel transfers and screen compositing for its RGB separation, preserving displaced colors and base alpha. The fractional map-centering matrix remains because equivalent-looking replacements round differently in Safari, and Safari filter invalidation remains for compatibility. Large Retina quote surfaces are substantially more expensive on Safari's SVG path; the explicit GPU option above is intended for the supported layout. Test the actual integration on target Macs, physical iPhone/iPad and Firefox before launch; mobile Safari and Firefox have not been verified. Unsupported video WebGL falls back to native glass, and unsupported quote WebGL falls back to SVG; labels and links remain functional.
 
 If a strict Content Security Policy is used, allow the generated `data:` displacement image and the package's inline style updates under your chosen policy. The effect itself does not make network requests. Your video, fonts and other assets follow the host application's normal policies.
 

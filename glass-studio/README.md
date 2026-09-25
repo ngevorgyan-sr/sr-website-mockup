@@ -16,6 +16,8 @@ The separate [three-button comparison](https://ngevorgyan-sr.github.io/sr-websit
 - **Reset defaults** loads the original starting defaults. Import the included **preset.json** to restore the locked website settings.
 - Minimize the panel with its minus button or Escape; reopen it using **Glass Studio**.
 
+Safari uses the approved native-density GPU quote renderer for this playground’s quote. Chrome keeps its native SVG path. The authored timing, color and strength settings are shared; native text remains selectable and accessible. Unsupported or lost GPU contexts use the SVG fallback. There is no continuous drawing while the effect is idle.
+
 The fixed navigation button has no lift or scale, matching the mockup. Reduced-motion preferences suppress animated effects. If the full shader is unavailable, native glass styling remains readable.
 
 ## Apply a preset to a real website
@@ -33,6 +35,8 @@ const button = mountGlassButton(document.querySelector('.apply'), {
 });
 const quote = mountGlassQuote(document.querySelector('.quote'), {
   settings: preset.quote,
+  // With the supported quote markup from the effects demo:
+  safariGPU: true,
 });
 // Tear down with button.destroy() and quote.destroy() when removing the page.
 ```

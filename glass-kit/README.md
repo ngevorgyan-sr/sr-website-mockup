@@ -53,6 +53,22 @@ quote.destroy();
 
 For a bundler project, install the downloaded folder locally with `npm install ./vendor/speedrun-glass-effects`. It is not published to the npm registry. Ready-made React / Next.js client examples are in `examples/`; initialize after mount and return `destroy()` from the effect cleanup. For plain HTML, the prebuilt files work without installing or building anything. A classic-script build is also provided as `dist/glass-effects.global.js`, exposing `window.SpeedrunGlass`.
 
+## Accelerated Quotes in Safari
+
+Version 1.2 adds an optional Safari GPU renderer for the included quote layout. The demo enables it. To use it on your own quote, keep a **flat opaque background**, put quote text in `<blockquote>`, and wrap attribution paragraphs in `.quote-attribution`:
+
+```html
+<section data-glass-quote data-glass-quote-gpu
+         style="--glass-quote-background:#f3f3f3">
+  <blockquote>Your quote goes here.</blockquote>
+  <div class="quote-attribution"><p>Your attribution goes here.</p></div>
+</section>
+```
+
+For direct mounting, pass `{safariGPU: true}` to `mountGlassQuote`. The React example accepts the same `safariGPU` prop. This renderer paints only the documented text and optional `.quote-avatars img` portraits; it is **not** an arbitrary HTML renderer. Quotes with other visible content, decorative backgrounds or unsupported styling should keep the default SVG path by omitting the option/attribute. See the [supported layout contract](INTEGRATION.md#safari-quote-acceleration) before opting in.
+
+The native HTML remains available for selection and accessibility. Chrome keeps its existing SVG rendering, and Safari falls back to SVG while the GPU is unavailable, the text is selected or the source is rebuilding. The locked appearance and timing settings are unchanged.
+
 ## Run the Included Example
 
 Unzip the complete download, then double-click **demo/index.html**. It embeds the classic-script runtime, styles, font and poster directly in that file, so no server or installation is needed. Hover/click either button and scroll down to the quote. Choose **Try your own video** to test moving footage; the download starts with a still poster.

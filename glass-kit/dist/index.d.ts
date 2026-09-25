@@ -31,7 +31,11 @@ export interface GlassController {
   destroy():void;
 }
 export interface ButtonOptions {video?:HTMLVideoElement|string|null; lift?:boolean; settings?:SettingsOverride}
-export interface QuoteOptions {content?:HTMLElement|string; headerOffset?:number; settings?:SettingsOverride; scroll?:boolean}
+export interface QuoteOptions {
+  content?:HTMLElement|string; headerOffset?:number; settings?:SettingsOverride; scroll?:boolean;
+  /** Safari-only acceleration for the documented flat-background quote layout. Default false. */
+  safariGPU?:boolean;
+}
 export function getGlassPreset():{button:GlassSettings & {surface:Material};quote:GlassSettings};
 export function mountGlassButton(element:HTMLElement|string,options?:ButtonOptions):GlassController;
 export function mountGlassQuote(element:HTMLElement|string,options?:QuoteOptions):GlassController;
